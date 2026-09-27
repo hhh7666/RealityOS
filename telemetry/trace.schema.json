@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1",
+  "fields": {
+    "timestamp": "ISO-8601",
+    "input_id": "string",
+    "intent": "string",
+    "operators_selected": ["operator_id"],
+    "fusion_groups": [["operator_id"]],
+    "historical_matches": "integer",
+    "state_changed": "boolean",
+    "user_correction": "boolean",
+    "reroute": "boolean",
+    "estimated_duration": "number|null",
+    "actual_duration": "number|null",
+    "path_length_before": "number|null",
+    "path_length_after": "number|null",
+    "notes": "string|null"
+  }
+}
