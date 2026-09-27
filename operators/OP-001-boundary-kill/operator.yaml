@@ -1,0 +1,40 @@
+id: OP-001
+name: BOUNDARY_KILL
+version: 0.1.0
+purpose: Search outside the presented problem boundary before optimizing inside it.
+triggers:
+  - proposed_solution
+  - architecture_problem
+  - workflow_problem
+  - repeated_friction
+  - excessive_complexity
+anti_triggers:
+  - direct factual lookup with no architecture choice
+requires:
+  - current_problem
+transform:
+  - DELETE
+  - REUSE
+  - MERGE
+  - INVERT
+  - COMPOSE
+  - MINIMIZE
+  - CONSTRUCT
+output:
+  - actual_objective
+  - removable_assumptions
+  - reusable_existing_flows
+  - merged_problem_classes
+  - shortest_supported_path
+  - construction_that_remains
+compatible_with:
+  - OP-002
+  - OP-003
+stop_conditions:
+  - no_supported_shorter_path_found
+  - further_deletion_breaks_objective
+telemetry:
+  - original_path_length
+  - compiled_path_length
+  - removed_components
+  - avoided_manual_steps
