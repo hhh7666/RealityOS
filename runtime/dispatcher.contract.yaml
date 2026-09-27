@@ -1,0 +1,20 @@
+version: 0.1
+goal: Select the smallest operator graph that materially changes the answer.
+
+rules:
+  - Never invoke an operator merely because its vocabulary appears in the input.
+  - Prefer zero operators when the raw model path is already sufficient.
+  - Prefer one operator over multiple operators.
+  - Compose only when downstream transformation depends on upstream output.
+  - Fuse compatible operators when intermediate observation is unnecessary.
+  - BOUNDARY_KILL runs before optimizing a user-proposed architecture when a removable boundary is plausible.
+  - STATE runs when navigation/progress is the problem, not as decorative formatting.
+  - CROSS requires structural invariants and breakpoint testing; metaphor alone is insufficient.
+
+output:
+  intent: string
+  operator_graph: list
+  fusion_groups: list
+  required_context: list
+  expected_gain: string
+  skip_reason: string_or_null
