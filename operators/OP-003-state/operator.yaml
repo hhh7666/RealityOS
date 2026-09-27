@@ -1,0 +1,33 @@
+id: OP-003
+name: STATE
+version: 0.1.0
+purpose: Convert a complex ongoing situation into an actionable state transition without flattening its structure.
+triggers:
+  - project_navigation
+  - many_open_loops
+  - unclear_progress
+  - next_step_selection
+requires:
+  - current_evidence
+transform:
+  - IDENTIFY_PREVIOUS
+  - IDENTIFY_CURRENT
+  - IDENTIFY_NEXT
+  - IDENTIFY_UNLOCKS
+  - IDENTIFY_OPEN_LOOPS
+output:
+  - previous
+  - current
+  - next
+  - unlocks
+  - open_loops
+compatible_with:
+  - OP-001
+  - OP-002
+stop_conditions:
+  - current_state_is_actionable
+telemetry:
+  - open_loops_before
+  - open_loops_after
+  - reroutes
+  - user_corrections
