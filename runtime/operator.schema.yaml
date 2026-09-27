@@ -1,0 +1,21 @@
+schema_version: 0.1
+required:
+  - id
+  - name
+  - purpose
+  - triggers
+  - transform
+  - output
+  - stop_conditions
+fields:
+  id: stable operator id
+  name: stable machine name
+  purpose: one-sentence transformation objective
+  triggers: conditions suggesting invocation
+  anti_triggers: conditions where invocation adds needless work
+  requires: minimum context
+  transform: ordered cognitive operations
+  output: required result fields
+  compatible_with: operators that commonly compose
+  stop_conditions: conditions preventing endless analysis
+  telemetry: measurements used to evaluate utility
