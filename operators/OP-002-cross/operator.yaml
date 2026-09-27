@@ -1,0 +1,38 @@
+id: OP-002
+name: CROSS
+version: 0.1.0
+purpose: Transfer a mechanism between domains only after extracting and testing the shared structure.
+triggers:
+  - analogy
+  - cross_domain_mapping
+  - historical_isomorphism
+  - mechanism_transfer
+anti_triggers:
+  - surface_similarity_without_shared_relations
+requires:
+  - source_structure
+  - target_problem
+transform:
+  - EXTRACT_RELATIONS
+  - REMOVE_DOMAIN_SKIN
+  - MAP_INVARIANTS
+  - TEST_BREAKPOINTS
+  - TRANSFER_MECHANISM
+output:
+  - source_structure
+  - target_structure
+  - invariants
+  - broken_correspondences
+  - transferable_mechanism
+  - testable_consequence
+compatible_with:
+  - OP-001
+  - OP-003
+stop_conditions:
+  - mapping_depends_only_on_metaphor
+  - no_testable_structure_survives
+telemetry:
+  - candidate_matches
+  - rejected_false_isomorphisms
+  - transferred_mechanisms
+  - validated_transfers
